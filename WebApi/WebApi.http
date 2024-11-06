@@ -1,0 +1,120 @@
+@WebApi_HostAddress = https://localhost:5002
+
+//USER
+###
+GET {{WebApi_HostAddress}}/api/users/paged?page=0&pageSize=2
+Authorization: Kat
+
+###
+GET {{WebApi_HostAddress}}/api/users/1
+Authorization: Kat
+
+###
+POST {{WebApi_HostAddress}}/api/users
+Content-Type: application/json
+Authorization: Kat
+{
+    "username": "TESTER",
+    "password": "TEST",
+    "email": "test@mail.com",
+    "birthday": "2000-01-01",
+    "phonenumber": "25123456"
+}
+
+###
+PUT {{WebApi_HostAddress}}/api/users/1
+Content-Type: application/json
+Authorization: Kat
+{
+    "username": "TESTER",
+    "password": "test",
+    "email": "test",
+    "birthday": "2000-01-01",
+    "phonenumber": "test"
+}
+
+###
+DELETE {{WebApi_HostAddress}}/api/users/TESTER
+Authorization: Kat
+
+
+
+###
+//TITLE
+GET {{WebApi_HostAddress}}/api/titles/paged?page=0&pageSize=5
+Authorization: Kat
+
+###
+GET {{WebApi_HostAddress}}/api/titles/tt26693752
+Accept: application/json
+Authorization: Kat
+
+###
+POST {{WebApi_HostAddress}}/api/titles
+Content-Type: application/json
+Authorization: Kat
+{
+    "primarytitle": "test",
+    "originaltitle": "TEST",
+    "isadult": true,
+    "startyear": "2000"
+}
+
+###
+PUT {{WebApi_HostAddress}}/api/titles/tt9916707
+Authorization: Kat
+Content-Type: application/json
+{
+    "primarytitle": "test1234",
+    "originaltitle": "test2",
+    "isadult": true,
+    "startyear": "2000"
+}
+
+###
+DELETE {{WebApi_HostAddress}}/api/titles/tt9916707
+Authorization: Kat
+
+
+
+
+###
+//NAME
+GET {{WebApi_HostAddress}}/api/names
+Accept: application/json
+
+###
+GET {{WebApi_HostAddress}}/api/names/paged?page=0&pageSize=2
+Authorization: Kat
+
+###
+GET {{WebApi_HostAddress}}/api/names/nm0000001
+Accept: application/json
+Authorization: Kat
+
+###
+POST {{WebApi_HostAddress}}/api/names
+Authorization: Kat
+Content-Type: application/json
+{
+    "primaryname": "test",
+    "birthyear": "1998",
+    "deathyear": ""
+}
+
+###
+PUT {{WebApi_HostAddress}}/api/names/nm9993712
+Content-Type: application/json
+Authorization: Kat
+{
+    "primaryname": "testing",
+    "birthyear": "test"
+}
+
+###
+DELETE {{WebApi_HostAddress}}/api/names/nm9993713
+Authorization: Kat
+
+
+
+
